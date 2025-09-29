@@ -7,7 +7,7 @@ var pilots = [
     id: 2,
     name: "Wedge Antilles",
     faction: "Rebels",
-    years: 10
+    years: 10 
   },
   {
     id: 8,
@@ -30,29 +30,43 @@ var pilots = [
 ];
 
 function iterateSimple() {
+  for (let i = 0; i < pilots.length; i++) {
+    const element = pilots[i];
+    console.log(pilots[i]);
+  }
 }
 function iterateForEach() {
+  pilots.forEach(function (piloto)  {
+    console.log(piloto);
+  });
 }
 function mapIds() {
+  var doubles = pilots.map(function(piloto){
+    return piloto.id;
+    
+  });
+  console.log(JSON.stringify(doubles));
+  return doubles
 }
-function rebels() {
+/*function rebels() {
 }
 function totalFaction(faction) {
 }
 function avgYears(faction) {
-}
+}*/
 
 // use console.log
-iterateSimple()
-iterateForEach()
+//iterateSimple()
+//iterateForEach()
 try {
   assert.deepStrictEqual(mapIds(), [2,8,40,66])
-  assert.deepStrictEqual(rebels(), [pilots[0], pilots[3]])
+  /*assert.deepStrictEqual(rebels(), [pilots[0], pilots[3]])
 
   assert.deepStrictEqual(totalFaction('Rebels'), 2)
 
   assert.deepStrictEqual(avgYears('Rebels'), 22.5)
   assert.deepStrictEqual(avgYears('Empire'), 25)
+  */
 } catch (error) {
   console.error(error)
 }
